@@ -109,68 +109,190 @@ To access more details, look at the API's below
 
 
      
+<p> </p>
+<table>
+  <tbody>
+    <tr>
+      <th>S.NO</th>
+      <th>Description</th>
+      <th colspan="1">Method</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td>
+        <p>Invoke one or more ABLUnit tests</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/invoke</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">POST</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>
+        <p>Get all the list of tests executed</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>
+        <p>Get all the list of the tests that have completed execution</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all/complete</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">4.</td>
+      <td colspan="1">
+        <p>
+          <span>Get all the list of the tests that are still running</span>
+        </p>
+        <p>
+          <span>
+            <br/>
+          </span>
+        </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all/active</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">5.</td>
+      <td colspan="1">
+        <p>
+          <span>Get all the list of the tests that are aborted after run</span>
+        </p>
+        <p>
+          <span>
+            <br/>
+          </span>
+        </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all/aborted</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">6.</td>
+      <td colspan="1">
+        <p>Get the summary of each client session</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/clientsession/&lt;client session&gt;</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">7.</td>
+      <td colspan="1">
+        <p>Get the summary of each test session</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/session/&lt;test session&gt;</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">8.</td>
+      <td colspan="1">
+        <p>Get the summary of all tests and sort them</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all?sortby=&lt;ClientSessions column name&gt;</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">9.</td>
+      <td colspan="1">
+        <p>Get the summary of all tests and filter them</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all?filter=testStatus%3D%22PASSED%22</span>
+          </code>
+        </p>
+        <p>or</p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/sessions/all?filter=testStatus%3D%22PASSED%22%26execTime&gt;50</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">10.</td>
+      <td colspan="1">
+        <p>Get the summary of all tests and apply both filter and sorting</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/ABLWebApp/web/auhandler/sessions/all?filter=testStatus=%22PASSED%22&amp;Started%3E=2016-10-31T10:03:55.439-04:00&amp;sortby=ExecTime</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">11.</td>
+      <td colspan="1">
+        <p>Get the list of methods or procedures in a given ABLUnit test which has only @Test annotation</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/web/auhandler/tests/&lt;testname&gt;</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+    <tr>
+      <td colspan="1">12.</td>
+      <td colspan="1">
+        <p>Get the ABLUnit result XML file</p>
+        <p> </p>
+        <p>
+          <code>
+            <span style="color: rgb(153,51,0);">http://&lt;hostname&gt;:&lt;port&gt;/&lt;ABLWebApp&gt;/static/results/&lt;sessionid&gt;.xml</span>
+          </code>
+        </p>
+      </td>
+      <td colspan="1">GET</td>
+    </tr>
+  </tbody>
+</table>
+<p> </p>
+<p> </p>
  
-Description | Method
-1.	
-Invoke one or more ABLUnit tests
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/invoke | POST
-2.	
-Get all the list of tests executed
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all
-GET
-3.	
-Get all the list of the tests that have completed execution
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all/complete
-GET
-4.	
-Get all the list of the tests that are still running
-
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all/active
-GET
-5.	
-Get all the list of the tests that are aborted after run
-
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all/aborted
-GET
-6.	
-Get the summary of each client session
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/clientsession/<client session>
-GET
-7.	
-Get the summary of each test session
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/session/<test session>
-GET
-8.	
-Get the summary of all tests and sort them
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all?sortby=<ClientSessions column name>
-GET
-9.	
-Get the summary of all tests and filter them
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all?filter=testStatus%3D%22PASSED%22
-or
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all?filter=testStatus%3D%22PASSED%22%26execTime>50
-GET
-10.	
-Get the summary of all tests and apply both filter and sorting
- 
-http://<hostname>:<port>/ABLWebApp/web/auhandler/sessions/all?filter=testStatus=%22PASSED%22&Started%3E=2016-10-31T10:03:55.439-04:00&sortby=ExecTime
-GET
-11.	
-Get the list of methods or procedures in a given ABLUnit test which has only @Test annotation
- 
-http://<hostname>:<port>/<ABLWebApp>/web/auhandler/tests/<testname>
-GET
-12.	
-Get the ABLUnit result XML file
- 
-http://<hostname>:<port>/<ABLWebApp>/static/results/<sessionid>.xml
-GET
- 
-
