@@ -10,25 +10,25 @@ The above diagram illustrates the components involved while writing this functio
 ##HTTP Client
 As the backend are RESTful Services, the HTTP Client can be any RESTful client(Javascript,curl etc). Also we can use tools like Jmeter or SOAPUI to run any kind of Performance tests with the same exposed URL's. Takes one or a list of tests as input  and passes each of them synchronously or asynchronously based on the requirement. 
 
-## H2 ABLUnitHandler.cls
+##ABLUnitHandler.cls
 WebHandler responsible to take the input from HTTP Client, create the JSON input for ABLUnit and call "RunABLUnit" procedure synchronously in the same WEB transport or asynchronously on the APSV transport.
 
-## H2 RunABLUnit.p
+##RunABLUnit.p
 ABL procedure that invokes ABLUnit functions.
 
-## H2 ABLUnitHandlerCore.cls
+##ABLUnitHandlerCore.cls
 Core functionality that is been used to generate input, invoke ABLUnit and validate results.
 
-## H2 GetTestSummary.cls
+##GetTestSummary.cls
 WebHandler that exposes REST API's to provide the summary and status of the tests ran.
 
-## H2 TestMetrics.cls
+##TestMetrics.cls
 All kinds of metrics information for the tests ran.
 
-## H2 ABLUnitHandlerDB
+##ABLUnitHandlerDB
 OpenEdge Database to store the information of each test.
 
-## H2 ABLUnit Results
+##ABLUnit Results
 ABLUnit results are stored in the deployed applications "/static/results" folder. The idea is to provide public access to the results and should be accessible based on test session's id.  
  
  
