@@ -84,3 +84,18 @@ In the attached client, we are running a list of tests as below
 
 
 The list will be parsed and each client is run asynchronously as below.
+```javascript
+{
+  "Sessionid": "<Client GUID> ",
+  "ABLUnit": [
+    {
+      "tests": [
+        {
+          "test": "<testname>"
+        }
+      ]
+    }
+  ]
+}
+```
+
