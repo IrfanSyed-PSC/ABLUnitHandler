@@ -69,3 +69,17 @@ In-case, you do not want to control the asynchronous behavior and would like to 
        RUN RunABLUnit.p ON SERVER hAppSrv ASYNCHRONOUS SET asynchandle (INPUT configJson,INPUT updatefile,INPUT sessguid,INPUT resultsDir,INPUT rec_id).
 
 
+In the attached client, we are running a list of tests as below
+
+{
+  "tests": [
+    "PASOEAPITesting.cls",
+    "test1.p",
+    "CallAPSV.p",
+    "Communities_testing.p"
+  ],
+  "async": "true"
+}
+
+
+The list will be parsed and each client is run asynchronously as below.
