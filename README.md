@@ -61,8 +61,11 @@ Add the database details to the agentStartupParam of the PASOE Instance and you 
 As mentioned above, any HTTP client can be used to test the the ABLUnitHandler. For simplicity, we have used a javascript client so that both synchronous as well as asynchronous requests can be invoked. Please look into ABLUnitDriver.js on how the client is preparing the payload and invoking ABLUnitHandler.
  
 If you want to control the asnychronous behavior from the client, then in ABLUnitHandler.cls call "RunABLUnit.p"  as below 
+
         RUN RunABLUnit.p(INPUT configJson,INPUT updatefile,INPUT sessguid,INPUT resultsDir,INPUT rec_id).
+
 In-case, you do not want to control the asynchronous behavior and would like to leave it the WebHandler, then call "RunABLUnit.p"  as below 
+
        RUN RunABLUnit.p ON SERVER hAppSrv ASYNCHRONOUS SET asynchandle (INPUT configJson,INPUT updatefile,INPUT sessguid,INPUT resultsDir,INPUT rec_id).
 
 
