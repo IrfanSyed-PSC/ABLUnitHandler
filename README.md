@@ -99,3 +99,10 @@ The list will be parsed and each client is run asynchronously as below.
 }
 ```
 
+As each client will be running a list of tests, to keep those details unique for the user it is recommended to send a unique Sessionid for each request(refer to attached javascript client for example). This way we can query by the Client Session-id and look for its corresponding tests. If we do not send any Sessionid then in the database the clientguid value will be set to null and we have to query by each test session-id which will be returned on every POST request.
+ 
+After successful execution of the test, you can query the status of the test by providing the Client GUID that was generated at the client as an input to the below API
+
+        http://<hostname>:<port>/<ABLWebApp>/web/auhandler/clntsession/<Client GUID>
+ 
+To access more details, look at the API's below
