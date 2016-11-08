@@ -106,3 +106,71 @@ After successful execution of the test, you can query the status of the test by 
         http://<hostname>:<port>/<ABLWebApp>/web/auhandler/clntsession/<Client GUID>
  
 To access more details, look at the API's below
+
+
+     
+ 
+Description | Method
+1.	
+Invoke one or more ABLUnit tests
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/invoke | POST
+2.	
+Get all the list of tests executed
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all
+GET
+3.	
+Get all the list of the tests that have completed execution
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all/complete
+GET
+4.	
+Get all the list of the tests that are still running
+
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all/active
+GET
+5.	
+Get all the list of the tests that are aborted after run
+
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all/aborted
+GET
+6.	
+Get the summary of each client session
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/clientsession/<client session>
+GET
+7.	
+Get the summary of each test session
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/session/<test session>
+GET
+8.	
+Get the summary of all tests and sort them
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all?sortby=<ClientSessions column name>
+GET
+9.	
+Get the summary of all tests and filter them
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all?filter=testStatus%3D%22PASSED%22
+or
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/sessions/all?filter=testStatus%3D%22PASSED%22%26execTime>50
+GET
+10.	
+Get the summary of all tests and apply both filter and sorting
+ 
+http://<hostname>:<port>/ABLWebApp/web/auhandler/sessions/all?filter=testStatus=%22PASSED%22&Started%3E=2016-10-31T10:03:55.439-04:00&sortby=ExecTime
+GET
+11.	
+Get the list of methods or procedures in a given ABLUnit test which has only @Test annotation
+ 
+http://<hostname>:<port>/<ABLWebApp>/web/auhandler/tests/<testname>
+GET
+12.	
+Get the ABLUnit result XML file
+ 
+http://<hostname>:<port>/<ABLWebApp>/static/results/<sessionid>.xml
+GET
+ 
+
